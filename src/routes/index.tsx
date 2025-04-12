@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { WobbleCard } from "@/components/layouts/wobble-card";
-import { ContactData } from "@/components/layouts/contact-data";
 import { cn } from "@/lib/utils";
 import { PrimaryFooterIndexOnly } from "@/components/layouts/static/Primary_Footer";
 import { ModeToggle } from "@/components/theme/mode-toggle";
@@ -174,7 +173,7 @@ export default function Index() {
             >
               Need Service?
             </h4>
-            <ContactData />
+            
           </div>
         </motion.div>
       </div>
