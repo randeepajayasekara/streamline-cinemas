@@ -30,6 +30,10 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			keyframes: {
+				move: {
+					"0%": { transform: "translateX(-200px)" },
+					"100%": { transform: "translateX(200px)" },
+				},
 				spotlight: {
 					'0%': {
 						opacity: 0,

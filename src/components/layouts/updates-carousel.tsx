@@ -13,7 +13,7 @@ import {
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { useOutsideClick } from "@/hooks/outside-click";
+import { useOutsideClick } from "@/hooks/use-outside-click";
 import { GoDotFill } from "react-icons/go";
 
 interface CarouselProps {
