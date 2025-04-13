@@ -36,7 +36,7 @@ function App() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-6 bg-neutral-100/80 dark:bg-gray-500/20 p-3 rounded-3xl border-2 border-gray-300 dark:border-gray-200/10">
-            <a href="/verified/portal/track">
+            <a href="/movies">
               <span className="text-sm/6 font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
                 Movies
               </span>
@@ -46,7 +46,7 @@ function App() {
                 Home
               </span>
             </Link>
-            <Link to="/verified/portal/helpdesk">
+            <Link to="/reserve/showtime">
               <span className="text-sm/6 font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
                 Buy Tickets
               </span>
@@ -94,28 +94,22 @@ function App() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   <a
-                    href="/verified/portal/track"
+                    href="/"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium text-gray-900 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-800/25 duration-300"
                   >
-                    Track
+                  Home
                   </a>
                   <Link
-                    to="/verified/updates"
+                    to="/movies"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium text-gray-900 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-800/25 duration-300"
                   >
-                    Updates
+                    Movies
                   </Link>
                   <Link
-                    to="/verified/portal/helpdesk"
+                    to="/reserve/showtime"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium text-gray-900 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-800/25 duration-300"
                   >
-                    Help
-                  </Link>
-                  <Link
-                    to="/explore"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-medium text-gray-900 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-800/25 duration-300"
-                  >
-                    Services
+                    Buy Tickets
                   </Link>
                 </div>
                 <div className="py-6">
