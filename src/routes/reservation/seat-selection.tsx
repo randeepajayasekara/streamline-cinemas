@@ -49,9 +49,6 @@ export default function SeatSelection() {
   const location = useLocation();
   const navigate = useNavigate();
   const {
-    movie,
-    date,
-    time,
     experience: experienceType,
     reservedSeats,
   } = location.state || {};
