@@ -89,6 +89,7 @@ export default function Index() {
           </div>
         </motion.div>
       </div>
+
     </div>
   );
 }
