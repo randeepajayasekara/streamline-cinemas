@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { WobbleCard } from "@/components/layouts/wobble-card";
 import { cn } from "@/lib/utils";
-import { PrimaryFooterIndexOnly } from "@/components/layouts/static/Primary_Footer";
 import { ModeToggle } from "@/components/theme/mode-toggle";
 
 export default function Index() {
@@ -177,7 +176,6 @@ export default function Index() {
           </div>
         </motion.div>
       </div>
-      <PrimaryFooterIndexOnly />
       <div className="fixed bottom-4 right-4 z-50">
         <ModeToggle />
       </div>
