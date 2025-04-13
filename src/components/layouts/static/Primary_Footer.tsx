@@ -21,15 +21,22 @@ export function PrimaryFooterIndexOnly() {
             Explore
           </h5>
           <div className="mt-4 flex flex-row w-max h-max">
-            <div className="flex justify-center items-center">
-              <IconMailFilled className="w-5 h-auto my-auto text-white dark:text-black" />
-            </div>
             <div className="my-auto pl-4 text-[0.8rem] text-[#afafaf] dark:text-slate-800">
               <a
-                href="mailto:quaristatechuse@gmail.com"
+                href="/movies"
                 className="hover:text-white duration-200 dark:hover:text-black"
               >
-                contact.quarista@gmail.com
+                Movies
+              </a>
+            </div>
+          </div>
+          <div className="mt-2 flex flex-row w-max h-max">
+            <div className="my-auto pl-4 text-[0.8rem] text-[#afafaf] dark:text-slate-800">
+              <a
+                href="/reserve/showtime"
+                className="hover:text-white duration-200 dark:hover:text-black"
+              >
+                Reserve
               </a>
             </div>
           </div>
@@ -56,9 +63,7 @@ export function PrimaryFooterIndexOnly() {
               <IconLocation className="w-5 h-auto my-auto text-white dark:text-black" />
             </div>
             <div className="my-auto pl-4 text-[0.8rem] text-[#afafaf] dark:text-slate-800">
-              <span
-                className="hover:text-white duration-200 dark:hover:text-black"
-              >
+              <span className="hover:text-white duration-200 dark:hover:text-black">
                 Streamline Cinemas, Sri Lanka
               </span>
             </div>
