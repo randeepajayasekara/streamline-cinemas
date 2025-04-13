@@ -36,11 +36,11 @@ function App() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-6 bg-neutral-100/80 dark:bg-gray-500/20 p-3 rounded-3xl border-2 border-gray-300 dark:border-gray-200/10">
-            <a href="/movies">
+            <Link to="/movies">
               <span className="text-sm/6 font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
                 Movies
               </span>
-            </a>
+            </Link>
             <Link to="/">
               <span className="text-sm/6 font-medium text-gray-900 dark:text-gray-100 bg-slate-800/20 backdrop-blur-sm hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
                 Home

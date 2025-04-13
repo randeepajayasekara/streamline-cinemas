@@ -1,36 +1,39 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { ClapSpinner } from "react-spinners-kit";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { getDatabase, ref, onValue } from "firebase/database";
 
 export function MovieListGridLayout() {
-    interface Card {
-        title: string;
-        description: string;
-        src: string;
-        ctaLink: string;
-        ctaText: string;
-        content: () => JSX.Element;
-    }
+  interface Card {
+    title: string;
+    description: string;
+    src: string;
+    ctaLink: string;
+    ctaText: string;
+    content: () => JSX.Element;
+  }
 
-    const [cards, setCards] = useState<Card[]>([]);
-    
-    useEffect(() => {
-        const db = getDatabase();
-        const cardsRef = ref(db, "cards");
-        const unsubscribe = onValue(cardsRef, (snapshot) => {
-            const data = snapshot.val();
-            if (data) {
-                const formattedCards = Object.values(data).map((card: any) => ({
-                    ...card,
-                    content: () => <p>{card.content}</p>,
-                }));
-                setCards(formattedCards);
-            }
-        });
-    
-        return () => unsubscribe();
-    }, []);
+  const [cards, setCards] = useState<Card[]>([]);
+  const [loading, setLoading] = useState(true); // Add loading state
+
+  useEffect(() => {
+    const db = getDatabase();
+    const cardsRef = ref(db, "cards");
+    const unsubscribe = onValue(cardsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const formattedCards = Object.values(data).map((card: any) => ({
+          ...card,
+          content: () => <p>{card.content}</p>,
+        }));
+        setCards(formattedCards);
+      }
+      setLoading(false); // Set loading to false after data is fetched
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
@@ -154,42 +157,48 @@ export function MovieListGridLayout() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-5xl mx-auto w-full grid grid-cols-2 md:grid-cols-3 items-start gap-4">
-        {cards.map((card, _index) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={card.title}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
-          >
-            <div className="flex gap-4 flex-col  w-full">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <img
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-60 w-full  rounded-lg object-cover object-top"
-                />
-              </motion.div>
-              <div className="flex justify-center items-center flex-col">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base"
-                >
-                  {card.description}
-                </motion.p>
+      {loading ? ( 
+        <div className="h-[50vh] w-full flex items-center justify-center">
+          <ClapSpinner/>
+        </div>
+      ) : (
+        <ul className="max-w-5xl mx-auto w-full grid grid-cols-2 md:grid-cols-3 items-start gap-4">
+          {cards.map((card, _index) => (
+            <motion.div
+              layoutId={`card-${card.title}-${id}`}
+              key={card.title}
+              onClick={() => setActive(card)}
+              className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            >
+              <div className="flex gap-4 flex-col  w-full">
+                <motion.div layoutId={`image-${card.title}-${id}`}>
+                  <img
+                    width={100}
+                    height={100}
+                    src={card.src}
+                    alt={card.title}
+                    className="h-60 w-full  rounded-lg object-cover object-top"
+                  />
+                </motion.div>
+                <div className="flex justify-center items-center flex-col">
+                  <motion.h3
+                    layoutId={`title-${card.title}-${id}`}
+                    className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
+                  >
+                    {card.title}
+                  </motion.h3>
+                  <motion.p
+                    layoutId={`description-${card.description}-${id}`}
+                    className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base"
+                  >
+                    {card.description}
+                  </motion.p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </ul>
+            </motion.div>
+          ))}
+        </ul>
+      )}
     </>
   );
 }
