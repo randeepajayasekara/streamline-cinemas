@@ -51,7 +51,7 @@ export default function Index() {
 
   return (
     <div>
-      <div className="relative mx-auto my-10 flex h-[600px] w-full max-w-7xl flex-col items-center justify-center overflow-hidden sm:rounded-none xl:rounded-3xl border border-zinc-900">
+      <div className="relative -top-12 mx-auto my-10 flex h-[600px] w-full max-w-7xl flex-col items-center justify-center overflow-hidden sm:rounded-none xl:rounded-3xl border border-zinc-900">
         <img
           alt=""
           src="https://i.ibb.co/T9pQJr6/icon.png"
