@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Movies() {
   return (
-    <div className="py-48 bg-black">
+    <div className="py-48 bg-white dark:bg-black">
       <motion.div
         initial={{ opacity: 0.0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
