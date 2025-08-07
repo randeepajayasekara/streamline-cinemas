@@ -4,13 +4,14 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PrimaryFooterIndexOnly } from "@/components/layouts/static/Primary_Footer";
 import { Outlet } from "react-router-dom";
+import { ReservationProvider } from "@/contexts/ReservationContext";
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <>
-      <header className="bg-white/40 dark:bg-[#0A0A0A]/80 backdrop-blur-md fixed inset-x-0 top-0 z-50 text-black dark:text-white border-b border-zinc-300 dark:border-zinc-800">
+    <ReservationProvider>
+      <header className="bg-white/0 dark:bg-[#0A0A0A]/80 backdrop-blur-md fixed inset-x-0 top-0 z-50 text-black dark:text-white border-b border-zinc-300 dark:border-zinc-800">
         <nav
           aria-label="Global"
           className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -35,19 +36,19 @@ function App() {
               <Bars3Icon aria-hidden="true" className="size-6" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-6 bg-neutral-100/80 dark:bg-gray-500/20 p-3 rounded-3xl border-2 border-gray-300 dark:border-gray-200/10">
+          <div className="hidden lg:flex lg:gap-x-6 bg-neutral-600/30 dark:bg-gray-500/20 p-3 rounded-3xl border-2 border-gray-300 dark:border-gray-200/10">
             <Link to="/movies">
-              <span className="text-sm/6 font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
+              <span className="text-sm/6 font-medium text-gray-100 dark:text-gray-100 hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
                 Movies
               </span>
             </Link>
             <Link to="/">
-              <span className="text-sm/6 font-medium text-gray-900 dark:text-gray-100 bg-slate-800/20 backdrop-blur-sm hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
+              <span className="text-sm/6 font-medium text-gray-100 dark:text-gray-100 bg-slate-800/20 backdrop-blur-sm hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
                 Home
               </span>
             </Link>
             <Link to="/reserve/showtime">
-              <span className="text-sm/6 font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
+              <span className="text-sm/6 font-medium text-gray-100 dark:text-gray-100 hover:bg-gray-600/10 dark:hover:bg-gray-300/10 duration-300 p-2 px-3 rounded-3xl">
                 Buy Tickets
               </span>
             </Link>
@@ -135,7 +136,7 @@ function App() {
         <Outlet />
       </main>
       <PrimaryFooterIndexOnly />
-    </>
+    </ReservationProvider>
   );
 }
 
