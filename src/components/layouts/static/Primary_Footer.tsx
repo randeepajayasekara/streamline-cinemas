@@ -79,7 +79,7 @@ export function PrimaryFooterIndexOnly() {
         className="text-center mt-8 mb-8 text-[1rem] text-zinc-200 dark:text-zinc-700"
         id="footerfootertext"
       >
-        © {getYear()} | By Randeepa Jayasekara | All Rights Reserved
+        © {getYear()} | Streamlined Cinemas | All Rights Reserved
       </div>
     </footer>
   );

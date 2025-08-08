@@ -3,13 +3,13 @@ import { getFirestore } from 'firebase/firestore';
 import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDbjYlTF7VaLzjwySSVjktoVhwXQ836nhU",
-  authDomain: "streamline-cinemas.firebaseapp.com",
-  projectId: "streamline-cinemas",
-  storageBucket: "streamline-cinemas.firebasestorage.app",
-  messagingSenderId: "692325065515",
-  appId: "1:692325065515:web:b3ae60d627787eb3da1b6e",
-  measurementId: "G-HZXBRZM9SR"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
   
 

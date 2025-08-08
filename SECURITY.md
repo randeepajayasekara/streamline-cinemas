@@ -4,18 +4,12 @@
 
 If you discover a security vulnerability within this project, please follow the steps below to report it:
 
-1. **Contact Us**: Email us at [info@quaristatech.com](mailto:quaristatechuse@gmail.com) with the details of the vulnerability.
+1. **Contact Us**: Email us at [info@streamlinetech.com](mailto:streamlinetech@gmail.com) with the details of the vulnerability.
 2. **Provide Details**: Include as much information as possible about the vulnerability to help us understand and address it promptly. This includes:
    - A detailed description of the vulnerability
    - The steps to reproduce the vulnerability
    - Any potential impacts or risks associated with the vulnerability
 3. **Wait for our Response**: We will acknowledge the receipt of your report within 48 hours and provide you with an estimated timeline for addressing the issue.
-
-## Supported Versions
-
-We actively support the following versions of our project:
-
-- [Release-v1.0.1+1](https://github.com/randeepajayasekara/waste-management-system-web/releases/tag/Latest) and later
 
 ## Security Updates
 
