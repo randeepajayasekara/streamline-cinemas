@@ -17,8 +17,6 @@ import ShowtimeSelection from '@/routes/reservation/showtime-selection.tsx'
 import SeatSelection from '@/routes/reservation/seat-selection.tsx'
 import CheckoutSimulation from '@/routes/reservation/simulated-checkout.tsx'
 import DataConfirmation from '@/routes/reservation/confirmation.tsx'
-import UserPanel from '@/routes/user/page.tsx'
-import AdminPanel from '@/routes/admin/page.tsx'
 
 import "./index.css";
 
@@ -37,8 +35,6 @@ createRoot(document.getElementById("root")!).render(
             <Route path="reserve/seat" element={<SeatSelection />} />
             <Route path="reserve/checkout" element={<CheckoutSimulation />} />
             <Route path="reserve/confirmation" element={<DataConfirmation />} />
-            <Route path="portal/dashboard" element={<UserPanel />} />
-            <Route path="portal/_admin/dashboard" element={<AdminPanel />} />
             <Route path="portal/_login" element={<LoginPage />} />
             <Route path="portal/_register" element={<RegisterPage />} />
             <Route path="*" element={<NotFound />} />
